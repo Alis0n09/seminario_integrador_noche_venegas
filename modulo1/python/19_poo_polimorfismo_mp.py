@@ -37,9 +37,9 @@ def procesar_todos_pagos(pagos):
         print(f"  {pago.procesar()}")
 
 pagos = [
-    PagoEfectivo("Ana Garcia", 800),
-    PagoTransferencia("Luis Perez", 950),
-    PagoCheque("Maria Lopez", 1200),
+    PagoEfectivo("Gabriela Calderon", 800),
+    PagoTransferencia("Ines Calderon", 950),
+    PagoCheque("Maria Torres", 1200),
     PagoTarjeta("Carlos Ruiz", 600, "TERM-001"),
 ]
 
@@ -52,7 +52,7 @@ class PagoPayPal:
 
 class PagoBitcoin:
     def procesar(self):
-        return "Pago via Bitcoin - procesado"
+        return "Pago via Bitcoins - procesado"
 
 def procesar_pago(pago):
     resultado = pago.procesar()

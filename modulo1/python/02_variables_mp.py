@@ -1,6 +1,6 @@
 MAX_EMPLEADOS = 50
 
-nombre = "Ana Garcia"
+nombre = "Jose Flores"
 edad = 30
 sueldo_base = 800.00
 horas_extras = 10.50
@@ -14,7 +14,7 @@ print(horas_extras, "tipo", type(horas_extras))
 print(activo, "tipo", type(activo))
 print(nulo, "tipo", type(nulo))
 
-nombre_empleado = str = "Ana Garcia"
+nombre_empleado = str = "Jose Flores"
 edad_empleado = int = 30
 sueldo_empleado = float = 800.00
 empleado_activo = bool = True

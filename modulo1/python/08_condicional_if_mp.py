@@ -8,7 +8,7 @@ if activo:
 print("if-else - sueldo minimo")
 sueldo = 850
 if sueldo >= 460:
-    print("Sueldo sobre el SBU Ecuador")
+    print("Sueldo sobre el SBU")
 else:
     print("Sueldo por debajo del SBU - revisar")
 

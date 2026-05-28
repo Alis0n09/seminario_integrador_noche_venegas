@@ -3,7 +3,7 @@ print("for basico - numeros de empleados")
 for i in range(1, 6):
     print(f"Procesando empleado #{i}")
 
-empleados = ["Ana Garcia", "Luis Perez", "Carlos Lopez"]
+empleados = ["Alison Venegas", "John Perez", "Alex Lopez"]
 for empleado in empleados:
     print(f"Procesando nomina de: {empleado}")
 
@@ -26,7 +26,7 @@ for i in range(10, 0, -1):
     print(f"Procesando empleado #{i} en orden inverso")
 
 print("for con enumerate - lista de empleados")
-nombres = ["Ana", "Luis", "Carlos", "Maria"]
+nombres = ["Alison", "John", "Alex", "Ines"]
 for indice, nombre in enumerate(nombres):
     print(f"Empleado #{indice + 1}: {nombre}")
 
@@ -49,6 +49,6 @@ promedio = total_nomina / cantidad
 print("Total nomina:", total_nomina)
 print("Promedio salarial:", promedio)
 if promedio >= 800:
-    print("La empresa cumple con el SBU Ecuador")
+    print("La empresa cumple con el SBU")
 else:
     print("Algunos empleados estan por debajo del SBU")

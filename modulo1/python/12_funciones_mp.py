@@ -1,7 +1,7 @@
-print("Funciones para sistema de nomina Ecuador")
+print("Funciones para sistema de nomina")
 print("funcion basica")
 def mostrar_bienvenida():
-    print("Sistema de Control de Nomina - Ecuador")
+    print("Sistema de Control de Nomina")
 mostrar_bienvenida()
 
 print("funcion con parametro")
@@ -52,7 +52,7 @@ def crear_empleado(**kwargs):
     print(f"Datos del empleado {kwargs}")
     for clave, valor in kwargs.items():
         print(f"- {clave}: {valor}")
-crear_empleado(nombre="Juan", apellido="Paris", cargo="Desarrollador", sueldo=1200)
+crear_empleado(nombre="Juan", apellido="Cornejo", cargo="Desarrollador", sueldo=1200)
 
 print("funcion parametros combinacion con todos los tipos")
 def configurar_nomina(empresa, *empleados, quincenal=False, **opciones):

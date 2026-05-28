@@ -1,4 +1,4 @@
-print("Tipo de contrato laboral Ecuador")
+print("Tipo de contrato laboral")
 contrato = input("Ingrese tipo de contrato: fijo/indefinido/temporal/porhoras: ")
 match contrato:
     case "fijo":

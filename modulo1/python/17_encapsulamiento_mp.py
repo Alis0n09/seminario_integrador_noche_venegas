@@ -45,16 +45,16 @@ class Empleado:
     def __str__(self):
         return f"Empleado({self.nombre}: ${self.__sueldo})"
 
-e1 = Empleado("1712345678", "Ana Garcia", 800)
-e2 = Empleado("1712345679", "Luis Perez", 500)
+e1 = Empleado("1712345678", "Alison Venegas", 800)
+e2 = Empleado("1712345679", "Lucia Perez", 500)
 
 pago1 = e1.pagar(10, 5)
 pago2 = e2.pagar()
 
 print(e1)
 print(e2)
-print(f"Pago Ana: ${pago1}")
-print(f"Pago Luis: ${pago2}")
+print(f"Pago Alison: ${pago1}")
+print(f"Pago Lucia: ${pago2}")
 
 for entrada in e1.historial:
     print(f"  {entrada}")

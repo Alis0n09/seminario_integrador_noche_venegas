@@ -1,7 +1,7 @@
 # empleado.py
 
 class Empleado:
-    especie = "Homo sapiens"
+    especie = "Empleado"
 
     def __init__(self, nombre, sueldo_base):
         self.nombre = nombre
@@ -13,7 +13,7 @@ class Empleado:
 
     def aumentar_sueldo(self, porcentaje):
         self.sueldo_base += self.sueldo_base * porcentaje / 100
-        print(f"Nuevo sueldo de {self.nombre}: ${self.sueldo_base:.2f}")
+        print(f"Nuevo sueldo de {self.nombre}: ${self.sueldo_base:.2f}.")
 
     def __str__(self):
         return f"Empleado({self.nombre}, ${self.sueldo_base})"
@@ -21,8 +21,8 @@ class Empleado:
     def __repr__(self):
         return f"Empleado(nombre={self.nombre!r}, sueldo_base={self.sueldo_base!r})"
 
-ana = Empleado("Ana Garcia", 800)
-luis = Empleado("Luis Perez", 950)
+ana = Empleado("Alison Venegas", 800)
+luis = Empleado("Lucia Perez", 950)
 
 print(ana.calcular_pago())
 print(luis.calcular_pago())

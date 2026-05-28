@@ -1,7 +1,7 @@
-print("Diccionarios de empleados - Nomina Ecuador")
+print("Diccionarios de empleados - Nomina")
 print("Crear diccionarios")
 vacio = {}
-empleado = {"nombre": "Pedro", "sueldo": 850, "cargo": "Operativo", "ciudad": "Quito"}
+empleado = {"nombre": "Pedrito", "sueldo": 850, "cargo": "Operativo", "ciudad": "Quito"}
 config = dict(empresa="UTE", moneda="USD", periodicidad="Mensual")
 
 print(empleado["nombre"])

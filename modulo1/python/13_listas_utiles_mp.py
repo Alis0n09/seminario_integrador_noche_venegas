@@ -4,9 +4,9 @@ vacia = []
 print(vacia)
 codigos = [101, 102, 103, 104, 105]
 print(codigos)
-nombres = ["Ana", "Juana", "Jose", "Yamil"]
+nombres = ["Alison", "John", "Jose", "Alex"]
 print(nombres)
-mixta = [101, "Ana", True, "Quito", None, 850.50]
+mixta = [101, "Alison", True, "Quito", None, 850.50]
 print(mixta)
 anidada = [101, 102, [103, 104], 105, [106, [107, 108]]]
 print(anidada)
@@ -18,16 +18,16 @@ print(nombres[1:3])
 print(nombres[::-1])
 
 print("CRUD de una lista de empleados")
-empleados = ["Ana", "Luis", "Carlos", "Maria"]
+empleados = ["Alison", "John", "Jose", "Alex"]
 print(empleados)
-empleados.insert(1, "Pedro")
+empleados.insert(1, "Pedrito")
 print(empleados)
 empleados.append("Sofia")
 print(empleados)
-empleados.extend(["Juan", "Elena"])
-empleados[0] = "Ana Maria"
+empleados.extend(["Carlos", "Elena"])
+empleados[0] = "Maria Emilia"
 print(empleados)
-empleados.remove("Ana Maria")
+empleados.remove("Maria Emilia")
 print(empleados)
 eliminado = empleados.pop()
 print("Eliminado:", eliminado)
@@ -38,9 +38,9 @@ del empleados[0]
 print(empleados)
 
 print("Buscar valores en los elementos de una lista")
-print("Ana" in empleados)
-print(empleados.index("Luis"))
-print(empleados.count("Luis"))
+print("Alison" in empleados)
+print(empleados.index("John"))
+print(empleados.count("John"))
 
 print("Ordenar lista de empleados")
 sueldos_desordenados = [850, 600, 1200, 950, 700]
@@ -59,7 +59,7 @@ print(sueldos_desordenados)
 print("Diccionarios en nomina")
 print("Crear diccionarios")
 vacio = {}
-empleado = {"nombre": "Pedro", "sueldo": 850, "cargo": "Operativo"}
+empleado = {"nombre": "Pedrito", "sueldo": 850, "cargo": "Operativo"}
 config = dict(empresa="UTE", moneda="USD")
 
 print(empleado["nombre"])

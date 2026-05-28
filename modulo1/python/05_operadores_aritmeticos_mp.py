@@ -9,7 +9,7 @@ sueldo_neto = total_ingresos - aporte_iess
 decimo_tercero = total_ingresos / 12
 decimo_cuarto = 460.00
 
-print("--- CALCULO DE NOMINA ECUADOR ---")
+print("--- CALCULO DE NOMINA ---")
 print("Sueldo base:", sueldo_base)
 print("Valor horas extra:", total_horas_extra)
 print("Total ingresos:", total_ingresos)
