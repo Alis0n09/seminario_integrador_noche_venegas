@@ -1,0 +1,10 @@
+print("Comparacion de sueldos de empleados")
+
+sueldo1 = float(input("Sueldo empleado 1: "))
+sueldo2 = float(input("Sueldo empleado 2: "))
+print(sueldo1, "==", sueldo2, sueldo1 == sueldo2)
+print(sueldo1, "!=", sueldo2, sueldo1 != sueldo2)
+print(sueldo1, ">", sueldo2, sueldo1 > sueldo2)
+print(sueldo1, "<", sueldo2, sueldo1 < sueldo2)
+print(sueldo1, ">=", sueldo2, sueldo1 >= sueldo2)
+print(sueldo1, "<=", sueldo2, sueldo1 <= sueldo2)
