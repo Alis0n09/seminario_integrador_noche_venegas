@@ -8,10 +8,6 @@ import type { PaginatedResult } from '@/domain/entities/paginated-result.entity'
 export class AxiosCategoryRepository implements CategoryRepository {
   async getCategories(): Promise<Category[]> {
     try {
-      // El backend pagina /categories/ (PAGE_SIZE=10 en config/settings.py).
-      // Se pide una página grande para obtener todas las categorías de una sola
-      // vez, ya que este port devuelve un listado plano (usado por el filtro
-      // público del catálogo).
       const { data } = await apiClient.get<PaginatedResult<Category>>('/categories/', {
         params: { page_size: 100 },
       })

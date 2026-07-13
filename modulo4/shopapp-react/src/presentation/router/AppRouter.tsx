@@ -5,17 +5,17 @@ import { useAuthStore } from '@/presentation/store/auth.store'
 import ProtectedRoute from './ProtectedRoute'
 import AppShell from '@/presentation/components/AppShell'
 import PlaceholderPage from '../pages/PlaceholderPage'
-import CatalogPage from '../pages/catalog/CatalogPage'
 
 // ─── Lazy imports ─────────────────────────────────────────────────────────────
 
-// Auth (sin shell) — reales desde este módulo
 const LoginPage = lazy(() => import('../pages/auth/LoginPage'))
 const RegisterPage = lazy(() => import('../pages/auth/RegisterPage'))
-
-// El resto de páginas todavía no existen: se implementan en módulos posteriores
-// (Catálogo → 4/5, Carrito → 6, Órdenes → 7, Perfil → 8, Admin → 9-13) y cada uno
-// reemplaza aquí su propio <Route> por un lazy import real.
+const CatalogPage = lazy(() => import('../pages/catalog/CatalogPage'))
+const ProductDetailPage = lazy(() => import('../pages/catalog/ProductDetailPage'))
+const CartPage = lazy(() => import('../pages/cart/CartPage'))
+const CheckoutPage = lazy(() => import('../pages/orders/CheckoutPage'))
+const OrdersPage = lazy(() => import('../pages/orders/OrdersPage'))
+const OrderDetailPage = lazy(() => import('../pages/orders/OrderDetailPage'))
 
 // ─── Loader global ────────────────────────────────────────────────────────────
 
@@ -32,10 +32,8 @@ function PageLoader() {
 export default function AppRouter() {
   const loadSession = useAuthStore((state) => state.loadSession)
 
-  // Cargar la sesión guardada al iniciar la app.
-  // loadSession() restaura los tokens y valida el token con /auth/me/
   useEffect(() => {
-    loadSession()
+    loadSession().catch(() => {})
   }, [loadSession])
 
   return (
@@ -48,17 +46,25 @@ export default function AppRouter() {
 
           {/* ── Rutas con AppShell ── */}
           <Route element={<AppShell />}>
-            {/* Públicas — placeholder hasta el módulo 4/5 */}
+            {/* Públicas */}
             <Route path="/" element={<CatalogPage />} />
             <Route path="/catalog" element={<CatalogPage />} />
-            <Route path="/products/:id" element={<PlaceholderPage title="Detalle de producto — Módulo 5" />} />
+            <Route path="/products/:id" element={<ProductDetailPage />} />
 
             {/* Requieren autenticación — placeholder hasta los módulos 6, 7 y 8 */}
             <Route
               path="/cart"
               element={
                 <ProtectedRoute>
-                  <PlaceholderPage title="Carrito — Módulo 6" />
+                  <CartPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/orders/new"
+              element={
+                <ProtectedRoute>
+                  <CheckoutPage />
                 </ProtectedRoute>
               }
             />
@@ -66,7 +72,7 @@ export default function AppRouter() {
               path="/orders"
               element={
                 <ProtectedRoute>
-                  <PlaceholderPage title="Órdenes — Módulo 7" />
+                  <OrdersPage />
                 </ProtectedRoute>
               }
             />
@@ -74,7 +80,7 @@ export default function AppRouter() {
               path="/orders/:id"
               element={
                 <ProtectedRoute>
-                  <PlaceholderPage title="Detalle de orden — Módulo 7" />
+                  <OrderDetailPage />
                 </ProtectedRoute>
               }
             />

@@ -11,10 +11,7 @@ export class ProductUseCase {
     this.productRepository = productRepository
   }
 
-  getProducts(
-    filters?: Partial<ProductFilters>,
-    page = 1
-  ): Promise<PaginatedResult<Product>> {
+  getProducts(filters?: Partial<ProductFilters>, page = 1): Promise<PaginatedResult<Product>> {
     return this.productRepository.getProducts(filters, page)
   }
 

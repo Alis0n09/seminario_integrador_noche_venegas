@@ -59,7 +59,7 @@ export default function CatalogPage() {
 
       {/* Filtro horizontal de categorías solo en escritorio */}
       <div className="mb-6 hidden lg:block">
-        <CategoryFilter />
+        <CategoryFilter layout="horizontal" />
       </div>
 
       {/* Layout de dos columnas en escritorio */}
