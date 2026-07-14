@@ -16,6 +16,11 @@ const CartPage = lazy(() => import('../pages/cart/CartPage'))
 const CheckoutPage = lazy(() => import('../pages/orders/CheckoutPage'))
 const OrdersPage = lazy(() => import('../pages/orders/OrdersPage'))
 const OrderDetailPage = lazy(() => import('../pages/orders/OrderDetailPage'))
+const ProfilePage = lazy(() => import('../pages/profile/ProfilePage'))
+const AdminDashboardPage = lazy(() => import('../pages/admin/AdminDashboardPage'))
+const AdminCategoriesPage = lazy(() => import('../pages/admin/AdminCategoriesPage'))
+const AdminProductsPage = lazy(() => import('../pages/admin/AdminProductsPage'))
+const AdminUsersPage = lazy(() => import('../pages/admin/AdminUsersPage'))
 
 // ─── Loader global ────────────────────────────────────────────────────────────
 
@@ -88,7 +93,7 @@ export default function AppRouter() {
               path="/profile"
               element={
                 <ProtectedRoute>
-                  <PlaceholderPage title="Perfil — Módulo 8" />
+                  <ProfilePage />
                 </ProtectedRoute>
               }
             />
@@ -98,7 +103,7 @@ export default function AppRouter() {
               path="/admin"
               element={
                 <ProtectedRoute requireStaff>
-                  <PlaceholderPage title="Admin Dashboard — Módulo 9" />
+                  <AdminDashboardPage />
                 </ProtectedRoute>
               }
             />
@@ -106,7 +111,7 @@ export default function AppRouter() {
               path="/admin/categories"
               element={
                 <ProtectedRoute requireStaff>
-                  <PlaceholderPage title="Admin Categorías — Módulo 10" />
+                  <AdminCategoriesPage />
                 </ProtectedRoute>
               }
             />
@@ -114,7 +119,7 @@ export default function AppRouter() {
               path="/admin/products"
               element={
                 <ProtectedRoute requireStaff>
-                  <PlaceholderPage title="Admin Productos — Módulo 11" />
+                  <AdminProductsPage />
                 </ProtectedRoute>
               }
             />
@@ -130,7 +135,7 @@ export default function AppRouter() {
               path="/admin/users"
               element={
                 <ProtectedRoute requireStaff>
-                  <PlaceholderPage title="Admin Usuarios — Módulo 13" />
+                  <AdminUsersPage />
                 </ProtectedRoute>
               }
             />

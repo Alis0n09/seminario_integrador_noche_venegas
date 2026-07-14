@@ -1,8 +1,10 @@
-// src/presentation/components/AppShell.tsx
+import { useEffect } from 'react'
 import { Link, Outlet, useNavigate } from 'react-router-dom'
-import { ShoppingBag, ShoppingCart, User, LogOut } from 'lucide-react'
+import { ShoppingBag, ShoppingCart, LogOut } from 'lucide-react'
 import { useAuthStore } from '@/presentation/store/auth.store'
 import { useCartStore } from '@/presentation/store/cart.store'
+import { useProfileStore } from '@/presentation/store/profile.store'
+import { UserAvatar } from '@/presentation/components/UserAvatar'
 import { Button } from '@/presentation/components/ui/button'
 import { Badge } from '@/presentation/components/ui/badge'
 import { CartDrawer } from '@/presentation/components/CartDrawer'
@@ -12,9 +14,17 @@ export default function AppShell() {
   const { user, logout } = useAuthStore()
   const openCart = useCartStore((s) => s.openCart)
   const cartItemCount = useCartStore((s) => s.itemCount())
+  const { profile, fetchProfile, clearProfile } = useProfileStore()
+
+  useEffect(() => {
+    if (user && !profile) {
+      fetchProfile()
+    }
+  }, [user, profile, fetchProfile])
 
   async function handleLogout() {
     await logout()
+    clearProfile()
     navigate('/login')
   }
 
@@ -34,6 +44,18 @@ export default function AppShell() {
             <Button variant="ghost" size="sm" asChild>
               <Link to="/catalog">Catálogo</Link>
             </Button>
+
+            {user && (
+              <Button variant="ghost" size="sm" asChild>
+                <Link to="/orders">Pedidos</Link>
+              </Button>
+            )}
+
+            {user && (
+              <Button variant="ghost" size="sm" asChild>
+                <Link to="/profile">Perfil</Link>
+              </Button>
+            )}
 
             {user?.is_staff && (
               <Button variant="ghost" size="sm" asChild>
@@ -58,7 +80,7 @@ export default function AppShell() {
               <>
                 <Button variant="ghost" size="icon" asChild>
                   <Link to="/profile">
-                    <User className="h-5 w-5" />
+                    <UserAvatar user={profile} size="sm" />
                   </Link>
                 </Button>
                 <Button variant="ghost" size="icon" onClick={handleLogout}>
