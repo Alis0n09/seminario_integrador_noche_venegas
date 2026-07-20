@@ -13,8 +13,13 @@ abstract class ConceptoNomina {
 }
 
 class Ingreso extends ConceptoNomina {
-  constructor(private monto: number, private nombre: string) {
+  private monto: number;
+  private nombre: string;
+
+  constructor(monto: number, nombre: string) {
     super();
+    this.monto = monto;
+    this.nombre = nombre;
   }
 
   override calcular(): number {
@@ -27,8 +32,13 @@ class Ingreso extends ConceptoNomina {
 }
 
 class Descuento extends ConceptoNomina {
-  constructor(private monto: number, private nombre: string) {
+  private monto: number;
+  private nombre: string;
+
+  constructor(monto: number, nombre: string) {
     super();
+    this.monto = monto;
+    this.nombre = nombre;
   }
 
   override calcular(): number {

@@ -8,11 +8,15 @@ interface Validable {
 }
 
 class RolPago implements Serializable, Validable {
-  constructor(
-    public cedula: string,
-    public conceptos: string[],
-    public total: number
-  ) {}
+  cedula: string;
+  conceptos: string[];
+  total: number;
+
+  constructor(cedula: string, conceptos: string[], total: number) {
+    this.cedula = cedula;
+    this.conceptos = conceptos;
+    this.total = total;
+  }
 
   serializar(): string {
     return JSON.stringify({ cedula: this.cedula, conceptos: this.conceptos, total: this.total });

@@ -1,6 +1,10 @@
 // Concepto puro
 class Trabajador {
-  constructor(public nombre: string) {}
+  nombre: string;
+
+  constructor(nombre: string) {
+    this.nombre = nombre;
+  }
 
   generarRol(): string {
     return `${this.nombre} — rol de pago en proceso.`;
@@ -8,8 +12,11 @@ class Trabajador {
 }
 
 class EmpleadoContrato extends Trabajador {
-  constructor(nombre: string, public departamento: string) {
+  departamento: string;
+
+  constructor(nombre: string, departamento: string) {
     super(nombre); // llama al constructor del padre
+    this.departamento = departamento;
   }
 
   // override sobrescribe el método del padre
@@ -31,10 +38,13 @@ console.log(e.liquidar("fin de contrato")); // Carlos Ruiz — liquidación por 
 console.log(e.departamento);           // Contabilidad
 
 class Empleado {
-  constructor(
-    public nombre: string,
-    protected salarioBase: number
-  ) {}
+  nombre: string;
+  protected salarioBase: number;
+
+  constructor(nombre: string, salarioBase: number) {
+    this.nombre = nombre;
+    this.salarioBase = salarioBase;
+  }
 
   calcularSalario(): number {
     return this.salarioBase;
@@ -46,12 +56,11 @@ class Empleado {
 }
 
 class Gerente extends Empleado {
-  constructor(
-    nombre: string,
-    salarioBase: number,
-    private bonificacion: number
-  ) {
+  private bonificacion: number;
+
+  constructor(nombre: string, salarioBase: number, bonificacion: number) {
     super(nombre, salarioBase);
+    this.bonificacion = bonificacion;
   }
 
   override calcularSalario(): number {
@@ -60,13 +69,13 @@ class Gerente extends Empleado {
 }
 
 class Vendedor extends Empleado {
-  constructor(
-    nombre: string,
-    salarioBase: number,
-    private comision: number,
-    private ventasMes: number
-  ) {
+  private comision: number;
+  private ventasMes: number;
+
+  constructor(nombre: string, salarioBase: number, comision: number, ventasMes: number) {
     super(nombre, salarioBase);
+    this.comision = comision;
+    this.ventasMes = ventasMes;
   }
 
   override calcularSalario(): number {
